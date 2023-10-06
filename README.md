@@ -38,4 +38,4 @@ curl -X 'POST' \
 
 <a href="https://docs.spring.io/spring-boot/docs/2.7.15/reference/htmlsingle/index.html#web">Spring Web</a>
 
-< a href="https://www.mongodb.com/compatibility/spring-boot">Spring Data MongoDB</a>
+<a href="https://www.mongodb.com/compatibility/spring-boot">Spring Data MongoDB</a>
