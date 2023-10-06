@@ -1,7 +1,7 @@
 # modulo2
 Microservicio para agregar y mostrar una coleccion de libros
 
-El microservicio agrega un documento a la collecion "libros" usando mongodb y utiliza el siguiente archivo para crear la base de datos librosdb
+El microservicio agrega un documento a la colección "libros" usando mongodb y se utiliza el siguiente archivo para crear la base de datos librosdb
 
 librosdb_crear.js
       
