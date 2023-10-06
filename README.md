@@ -26,6 +26,7 @@ curl -X 'POST' \
 
  El resultado deberia ser el siguiente:
  
+ 
  { "_id" : ObjectId("651e241f2869ee605130113f"), "titulo" : "Doce cuentos peregrinos", "autores" : "Gabriel García Márquez", "editorial" : "Diana", "edicion" : 2022, "paginas" : 700, "precio" : 420, "existencia" : 10, "isbn" : "978-0140239409" }
 
 # Documentacion de referencia
