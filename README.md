@@ -1,8 +1,8 @@
 # modulo2
-Microservicio para agregar y mostrar una coleccion de libros
+Microservicio para agregar, mostrar por ID, borrar por ID, actualizar por ID  y mostrar una coleccion completa de libros
 
 El microservicio agrega un documento a la colección "libros" y despliega la ista de todos los libros usando mongodb como base de datos NON-SQL y se utiliza el siguiente archivo para crear la base de datos librosdb
-El microservicio sera del tipos REST, la api esta contruida en JAVA, usando SpringBoot, Loombok y MAVEN, esta aplicación esta guiada por el Diseño de aplicaciones nativas para la
+El microservicio sera del tipo REST, la api esta contruida en JAVA, usando SpringBoot, Loombok y MAVEN, esta aplicación esta guiada por el Diseño de aplicaciones nativas para la
 nube (12 factores):
 
 LA API hace lo siguiente:
@@ -24,6 +24,8 @@ user: "libreria",
 pwd: "libreria",
 roles: [ { role: "userAdmin", db: "librosdb" }]
 })
+
+El archivo YAML es el siguiente:
 
       
 
