@@ -1,6 +1,0 @@
-db.libros(
-{
-user: "usuario_libros",
-pwd: "password_libros",
-roles: [{ role: "userAdmin", db: "libros" }]
-})
