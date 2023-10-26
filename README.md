@@ -47,6 +47,16 @@ curl -X 'POST' \
     "isbn":"978-0140239409"
 }' 
 
+Para poder ejecutar el codigo del proyecto se necesita hacer los siguinets pasos:
+
+Clonar el proyecto de este repositorio en un maquina local.
+Abrir el proyecto en un entorno de desarrollo (asegurarse que tenga OpenJDK 17).
+Verificar las dependencias del archivo POM.xml (se encuentra en raiz del proyecto)
+Ejecutar la aplicación en el entorno de Eclipse.
+Hacer las consultas guiadas del archivo YAML
+
+ARCHIVO YAML:
+
  El resultado deberia ser el siguiente:
  
  
