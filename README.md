@@ -1,4 +1,5 @@
-# modulo2
+# API de una libreria, proyecto Diplomado UNAM<br>
+<h3>Omar Jesús Sánchez Jimenez</h3><br>
 Microservicio para agregar, mostrar por ID, borrar por ID, actualizar por ID  y mostrar una coleccion completa de libros
 
 El microservicio agrega un documento a la colección "libros" y despliega la ista de todos los libros usando mongodb como base de datos NON-SQL y se utiliza el siguiente archivo para crear la base de datos librosdb
