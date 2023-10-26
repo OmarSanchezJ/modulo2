@@ -34,7 +34,6 @@ Revisar las dependencias necesarias que estan listadas en el archivo pom.xml (el
 Ejecutar la aplicación dentro del Framework para verificar y corregir errores.<br>
 Utilizar POSTMAN o un navegador para ejecutar las consultas del archivo YAML siguiente (mas abajo se pone un ejemplo):<br>
      
-El archivo YAML es el siguiente:
 
 # test
 Ejecutar el siguiente curl
