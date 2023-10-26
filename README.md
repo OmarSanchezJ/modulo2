@@ -25,9 +25,15 @@ pwd: "libreria",
 roles: [ { role: "userAdmin", db: "librosdb" }]
 })
 
-El archivo YAML es el siguiente:
+Para ejecutar el proyecto en una ambiente local, se debe hacer de la siguinete manera:
 
-      
+Clonar el codigo de este repositorio en una máquina local.
+Abrir el proyecto en el Framework de Eclipse.
+Revisar las dependencias necesarias que estan listadas en el archivo pom.xml (el archivo se encunetra en la raiz del proyecto).
+Ejecutar la aplicación dentro del Framework para verificar errores.
+Utilizar POSTMAN o un navegador para ejecutar las consultas del archivo YAML siguiente (mas abajo se pone un ejemplo):
+     
+El archivo YAML es el siguiente:
 
 # test
 Ejecutar el siguiente curl
