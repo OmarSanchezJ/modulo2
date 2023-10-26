@@ -1,5 +1,5 @@
 # API de una libreria, proyecto Diplomado UNAM<br>
-<h3>Omar Jesús Sánchez Jimenez</h3><br>
+<h3>Omar Jesús Sánchez Jiménez</h3><br>
 Microservicio para agregar, mostrar por ID, borrar por ID, actualizar por ID  y mostrar una coleccion completa de libros
 
 El microservicio agrega un documento a la colección "libros" y despliega los metodos PUT, GET, DELETE y UPDATE de los libros usando mongodb como base de datos NON-SQL y se utiliza un archivo para crear la base de datos librosdb, el cual se ejecuta desde un MONGO en localhost.<br>
@@ -69,7 +69,7 @@ curl -X 'POST' \
 
 # Archivo YAML
 
-archivo YAML
+<a href="api-docs.yaml">archivo YAML</a>
 
 # Documentacion de referencia
 <a href="https://maven.apache.org/guides/index.html">Official Apache Maven documentation</a>
