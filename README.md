@@ -2,7 +2,10 @@
 Microservicio para agregar y mostrar una coleccion de libros
 
 El microservicio agrega un documento a la colección "libros" y despliega la ista de todos los libros usando mongodb como base de datos NON-SQL y se utiliza el siguiente archivo para crear la base de datos librosdb
-El microservicio sera del tipos REST, la api esta contruida en JAVA, usando SpringBoot, Loombok y MAVEN, esta aplicación esta guiada por el :
+El microservicio sera del tipos REST, la api esta contruida en JAVA, usando SpringBoot, Loombok y MAVEN, esta aplicación esta guiada por el Diseño de aplicaciones nativas para la
+nube (12 factores):
+
+LA API hace lo siguiente:
 
 - Insertar un libro
 - Buscar un libro por su ID (el ID lo crea la BD de Mongo al agregar un libro)
