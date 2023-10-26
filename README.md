@@ -1,9 +1,27 @@
 # modulo2
 Microservicio para agregar y mostrar una coleccion de libros
 
-El microservicio agrega un documento a la colección "libros" uy despliega la ista de todos los libros usando mongodb como base de datso NON-SQL y se utiliza el siguiente archivo para crear la base de datos librosdb
+El microservicio agrega un documento a la colección "libros" y despliega la ista de todos los libros usando mongodb como base de datos NON-SQL y se utiliza el siguiente archivo para crear la base de datos librosdb
+El microservicio sera del tipos REST, la api esta contruida en JAVA, usando SpringBoot, Loombok y MAVEN, esta aplicación esta guiada por el :
 
-librosdb_crear.js
+- Insertar un libro
+- Buscar un libro por su ID (el ID lo crea la BD de Mongo al agregar un libro)
+- Buscar todos los libros de la BD
+- Borrar un libro por su ID
+- Actualizar algun campo del documento "Libro"
+
+Antes de empezar deberemos de crear la BD en Mongo ayudandonos del siguiente script, la base es local, el puerto es 27017 (default):
+
+en el shell de mondoDB:
+
+use admin
+db.createUser(
+{
+user: "libreria",
+pwd: "libreria",
+roles: [ { role: "userAdmin", db: "librosdb" }]
+})
+
       
 
 # test
