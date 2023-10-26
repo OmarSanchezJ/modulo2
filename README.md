@@ -25,10 +25,10 @@ pwd: "libreria",
 roles: [ { role: "userAdmin", db: "librosdb" }]
 })
 
-Para ejecutar el proyecto en una ambiente local, se debe hacer de la siguinete manera:
+Para ejecutar el proyecto en una ambiente local, se debe hacer de la siguiente manera:
 
-Clonar el codigo de este repositorio en una máquina local.
-Abrir el proyecto en el Framework de Eclipse.
+Clonar el codigo de este repositorio en una máquina local.<br>
+Abrir el proyecto en el Framework de Eclipse.<br>
 Revisar las dependencias necesarias que estan listadas en el archivo pom.xml (el archivo se encunetra en la raiz del proyecto).
 Ejecutar la aplicación dentro del Framework para verificar errores.
 Utilizar POSTMAN o un navegador para ejecutar las consultas del archivo YAML siguiente (mas abajo se pone un ejemplo):
