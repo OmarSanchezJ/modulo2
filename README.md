@@ -25,7 +25,7 @@ pwd: "libreria",
 roles: [ { role: "userAdmin", db: "librosdb" }]
 })
 
-Para ejecutar el proyecto en una ambiente local, se debe hacer de la siguiente manera:
+Para ejecutar el proyecto en un ambiente local, se debe hacer de la siguiente manera:
 
 Clonar el codigo de este repositorio en una máquina local.<br>
 Abrir el proyecto en el Framework de Eclipse.<br>
