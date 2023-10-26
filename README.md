@@ -31,7 +31,7 @@ Para ejecutar el proyecto en un ambiente local, se debe hacer de la siguiente ma
 Clonar el codigo de este repositorio en una máquina local.<br>
 Abrir el proyecto en el Framework de Eclipse.<br>
 Revisar las dependencias necesarias que estan listadas en el archivo pom.xml (el archivo se encuentra en la raiz del proyecto).<br>
-Ejecutar la aplicación dentro del Framework para verificar errores.<br>
+Ejecutar la aplicación dentro del Framework para verificar y corregir errores.<br>
 Utilizar POSTMAN o un navegador para ejecutar las consultas del archivo YAML siguiente (mas abajo se pone un ejemplo):<br>
      
 El archivo YAML es el siguiente:
