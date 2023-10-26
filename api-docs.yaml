@@ -1,0 +1,124 @@
+openapi: 3.0.1
+info:
+  title: Libros Microservice Endpoints
+  description: Definición de los Endpoints de Libros
+  contact:
+    name: UNAM
+    url: https://www.unam.mx/
+    email: omar@economia.unam.mx
+  version: v1
+servers:
+- url: http://localhost:8084
+  description: Generated server url
+paths:
+  /api/libros/{id}:
+    get:
+      tags:
+      - libro-controller
+      operationId: obtenerLibroPorId
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Libro'
+    put:
+      tags:
+      - libro-controller
+      operationId: actualizarLibro
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Libro'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Libro'
+    delete:
+      tags:
+      - libro-controller
+      operationId: eliminarLibro
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "204":
+          description: No Content
+  /api/libros:
+    get:
+      tags:
+      - libro-controller
+      operationId: obtenerLibro
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Libro'
+    post:
+      tags:
+      - libro-controller
+      operationId: crearLibro
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Libro'
+        required: true
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Libro'
+components:
+  schemas:
+    Libro:
+      type: object
+      properties:
+        id:
+          type: string
+        titulo:
+          type: string
+        autores:
+          type: string
+        editorial:
+          type: string
+        edicion:
+          type: string
+        paginas:
+          type: number
+          format: double
+        precio:
+          type: number
+          format: double
+        existencia:
+          type: number
+          format: double
+        isbn:
+          type: string
