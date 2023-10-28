@@ -59,15 +59,15 @@ curl -X 'POST' \
 
 # Ejemplos de ejecucion de los Endpoints
 <ul>
-     <li>Buscar un libro por ID</li>
+     <li><strong>Buscar un libro por ID</strong></li>
 <img src="https://github.com/OmarSanchezJ/modulo2/assets/82127842/f9439d76-bae0-42c2-8a38-eea15dd35303">
-     <li>Buscar todos los libros</li>
+     <li><strong>Buscar todos los libros</strong></li>
      <img src="https://github.com/OmarSanchezJ/modulo2/assets/82127842/7415b56e-473d-4038-89b3-bc74480bd991">
-     <li>Agregar un libro</li>
+     <li><strong>Agregar un libro</strong></li>
 <img src="https://github.com/OmarSanchezJ/modulo2/assets/82127842/709ff815-cfd7-43dc-ae63-1072a6e0d93d">
-     <li>Borrar un libro</li>
+     <li><strong>Borrar un libro</strong></li>
 <img src="https://github.com/OmarSanchezJ/modulo2/assets/82127842/45e02aaa-6638-4d44-94aa-2083e166108f">
-     <li>Actualizar un libro</li>
+     <li><strong>Actualizar un libro</strong></li>
      <img src="https://github.com/OmarSanchezJ/modulo2/assets/82127842/b9326cbb-94f1-4e1f-b630-8bfbb86ec444">
 </ul>
 
