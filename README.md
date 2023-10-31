@@ -76,7 +76,7 @@ Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo l
           apt install openjdk-17-jdk openjdk-17-jre</li>
      <li>- Copiar de forma manual MAVEN 3.9.5:<br>
        Bajar la version desde  https://maven.apache.org/download.cgi<br>
-       Descomprimir y mover el contenido 
+       Descomprimir y mover el contenido <br>
           tar -xzf apache-maven-3.9.5-bin.tar.gz   <br>
           sudo mv apache-maven-3.9.5 /opt/maven
      </li>
@@ -88,11 +88,11 @@ Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo l
      export MAVEN_HOME=/opt/maven<br>
      export PATH=${M3_HOME}/bin:${PATH}<br><br>
      sudo chmod +x /etc/profile.d/maven.sh<br>
-     source /etc/profile.d/maven.sh<br>
+     source /etc/profile.d/maven.sh<br><br>
      
      'verificar la version correcta de maven 3.9.5<br>
-     mvn --version<br>
-          </li>
+     mvn --version
+     </li>
      <li> Crear las variables de entorno  para conectarnos a MONGO ATLAS y compilar<br>
      sudo nano /etc/environment <br><br>
 
