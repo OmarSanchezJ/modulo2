@@ -14,7 +14,7 @@ LA API hace lo siguiente:
 - Borrar un libro por su ID
 - Actualizar algun campo del documento "Libro"
 
-Antes de empezar deberemos de crear la BD en Mongo ATLAS por lo que deberemos crear una cuenta en el sitio web https://www.mongodb.com/es , deberemos crear en la interfaz del sitio 
+Antes de empezar se deberá  crear la BD en Mongo ATLAS por lo que deberemos crear una cuenta en el sitio web https://www.mongodb.com/es , deberemos crear
 la base de datos "librosdb", ademas debemos asegurarnos que la IP de nuestro localhost puede acceder a MONGO ATLAS.<br>La base tendra los siguientes parametros:<br>
 usuario: "libreria"<br>
 password: "libreria"<br>
@@ -29,7 +29,7 @@ Utilizar POSTMAN o un navegador para ejecutar las consultas de cada endpoint (ma
      
 
 # test
-Ejecutar el siguiente curl para saber si la API esta "corriendo".
+Ejecutar el siguiente curl para saber si la API esta "corriendo" correctamente.
 
 curl -X 'POST' \
   'http://localhost:8084/api/libros' \
@@ -69,7 +69,7 @@ curl -X 'POST' \
 <a href="api-docs.yaml">archivo YAML</a>
 
 # Preparacion del la API para usar con DOCKER
-Se deberá compilar el codido del proyecto en la misma maquina local siguiendo las siguientes instrucciones (se utilizó UBUNTU para este ejemplo):
+Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo las siguientes instrucciones (se utilizó UBUNTU para este ejemplo):
 <ul>
      <li>Desde el shell instalar la siguiente version de JAVA:<br>
           apt install openjdk-17-jdk openjdk-17-jre</li>
@@ -89,11 +89,23 @@ Se deberá compilar el codido del proyecto en la misma maquina local siguiendo l
      sudo chmod +x /etc/profile.d/maven.sh<br>
      source /etc/profile.d/maven.sh<br>
      
-     'verificar la version correcta de maven 3.9.5 (si no reeptir los pasos)<br>
+     'verificar la version correcta de maven 3.9.5<br>
      mvn --version<br>
           </li>
-     <li> </li>
-     <li></li>
+     <li> Crear las variables de entorno  para conectarnos a MONGO ATLAS y compilar<br>
+     sudo nano /etc/environment <br><br>
+
+export MONGO_HOSTNAME="mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb"<br>
+export MONGO_AUTH=admin<br>
+export MONGO_PORT=27017<br>
+export TOMCAT_PORT=8084<br><br>
+
+source /etc/environment<br>
+mvn clean package
+</li>
+     <li>Crear el siguiente Dockerfile:
+          
+     </li>
 </ul>
 
 # Documentacion de referencia
