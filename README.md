@@ -1,5 +1,5 @@
 # API de una libreria, proyecto Diplomado UNAM<br>
-<h3>Omar Jesús Sánchez Jiménez</h3><br>
+<h3>Proyecto de un microservicio usando Docker v1.0</h3><br>
 Microservicio para agregar, mostrar por ID, borrar por ID, actualizar por ID  y mostrar una coleccion completa de libros
 
 El microservicio agrega un documento a la colección "libros" y despliega los metodos PUT, GET, DELETE y UPDATE de los libros usando mongodb como base de datos NON-SQL y se utiliza un archivo para crear la base de datos librosdb, el cual se ejecuta desde un MONGO en localhost.<br>
@@ -14,17 +14,10 @@ LA API hace lo siguiente:
 - Borrar un libro por su ID
 - Actualizar algun campo del documento "Libro"
 
-Antes de empezar deberemos de crear la BD en Mongo ayudandonos del siguiente script, la base es local, el puerto es 27017 (default):
-
-en el shell de mondoDB:
-
-use admin
-db.createUser(
-{
+Antes de empezar deberemos de crear la BD en Mongo ATLAS por lo que deberemos crear una cuenta en el sitio web https://www.mongodb.com/es , deberemos crear en la interfaz del sitio 
+la base de datos "librosdb", ademas asegurarnos que la IP desde MONGO ATLAS es accesible en el apartado de acceso de IP.
 user: "libreria",
-pwd: "libreria",
-roles: [ { role: "userAdmin", db: "librosdb" }]
-})
+pwd: "libreria".
 
 Para ejecutar el proyecto en un ambiente local, se debe hacer de la siguiente manera:
 
@@ -32,11 +25,11 @@ Clonar el codigo de este repositorio en una máquina local.<br>
 Abrir el proyecto en el Framework de Eclipse.<br>
 Revisar las dependencias necesarias que estan listadas en el archivo pom.xml (el archivo se encuentra en la raiz del proyecto).<br>
 Ejecutar la aplicación dentro del Framework para verificar y corregir errores.<br>
-Utilizar POSTMAN o un navegador para ejecutar las consultas del archivo YAML siguiente (mas abajo se pone un ejemplo):<br>
+Utilizar POSTMAN o un navegador para ejecutar las consultas de cada endpoint (mas abajo se pone los ejemplos):<br>
      
 
 # test
-Ejecutar el siguiente curl
+Ejecutar el siguiente curl para saber si la API esta "corriendo".
 
 curl -X 'POST' \
   'http://localhost:8084/api/libros' \
@@ -74,6 +67,34 @@ curl -X 'POST' \
 # Archivo YAML
 
 <a href="api-docs.yaml">archivo YAML</a>
+
+# Preparacion del la API para usar con DOCKER
+Se deberá compilar el codido del proyecto en la misma maquina local siguiendo las siguientes instrucciones (se utilizó UBUNTU para este ejemplo):
+<ul>
+     <li>Desde el shell instalar la siguiente version de JAVA:<br>
+          apt install openjdk-17-jdk openjdk-17-jre</li>
+     <li>Copiar de forma manual MAVEN 3.9.5:<br>
+       Bajar la version desde  https://maven.apache.org/download.cgi<br>
+       Descomprimir y mover el contenido 
+          tar -xzf apache-maven-3.9.5-bin.tar.gz   <br>
+          sudo mv apache-maven-3.9.5 /opt/maven
+     </li>
+     <li>Configurar las variables de entorno para MAVEN<br>
+     sudo nano /etc/profile.d/maven.sh<br><br>
+
+     export JAVA_HOME=/usr/lib/jvm/default-java<br>
+     export M3_HOME=/opt/maven<br>
+     export MAVEN_HOME=/opt/maven<br>
+     export PATH=${M3_HOME}/bin:${PATH}<br><br>
+     sudo chmod +x /etc/profile.d/maven.sh<br>
+     source /etc/profile.d/maven.sh<br>
+     
+     'verificar la version correcta de maven 3.9.5 (si no reeptir los pasos)<br>
+     mvn --version<br>
+          </li>
+     <li> </li>
+     <li></li>
+</ul>
 
 # Documentacion de referencia
 <a href="https://maven.apache.org/guides/index.html">Official Apache Maven documentation</a>
