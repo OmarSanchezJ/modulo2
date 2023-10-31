@@ -15,9 +15,9 @@ LA API hace lo siguiente:
 - Actualizar algun campo del documento "Libro"
 
 Antes de empezar deberemos de crear la BD en Mongo ATLAS por lo que deberemos crear una cuenta en el sitio web https://www.mongodb.com/es , deberemos crear en la interfaz del sitio 
-la base de datos "librosdb", ademas asegurarnos que la IP desde MONGO ATLAS es accesible en el apartado de acceso de IP.
-user: "libreria",
-pwd: "libreria".
+la base de datos "librosdb", ademas debemos asegurarnos que la IP de nuestro localhost puede acceder a MONGO ATLAS.<br>La base tendra los siguientes parametros:<br>
+usuario: "libreria"<br>
+password: "libreria"<br>
 
 Para ejecutar el proyecto en un ambiente local, se debe hacer de la siguiente manera:
 
