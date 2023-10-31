@@ -86,8 +86,7 @@ Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo l
      export JAVA_HOME=/usr/lib/jvm/default-java<br>
      export M3_HOME=/opt/maven<br>
      export MAVEN_HOME=/opt/maven<br>
-     export PATH=${M3_HOME}/bin:${PATH}<br><br>
-
+     export PATH=${M3_HOME}/bin:${PATH}
      
      sudo chmod +x /etc/profile.d/maven.sh<br>
      source /etc/profile.d/maven.sh<br><br>
