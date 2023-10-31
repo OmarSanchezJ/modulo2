@@ -103,9 +103,9 @@ export TOMCAT_PORT=8084<br><br>
 source /etc/environment<br>
 mvn clean package
 </li>
-     <li>Crear el siguiente Dockerfile:
+     <li>Una vez compilada nuestra app, crear el siguiente Dockerfile:
 'FROM ubuntu
-##instalar nginx
+##instalar nginx 'lo cambie de ultima hora iba usar TOMCAT, por eso la variable del puerto se llama asi, pero decidi usar NGINX
 RUN apt-get update
 RUN apt-get install -y nginx
 EXPOSE 80
