@@ -30,7 +30,7 @@ Utilizar POSTMAN o un navegador para ejecutar las consultas de cada endpoint (ma
 
 # test
 Ejecutar el siguiente curl para saber si la API esta "corriendo" correctamente.
-
+'''
 curl -X 'POST' \
   'http://localhost:8084/api/libros' \
   -H 'accept: application/json' \
@@ -44,7 +44,8 @@ curl -X 'POST' \
     "precio":420,
     "existencia":10,
     "isbn":"978-0140239409"
-}' 
+}'    
+'''
 
  El resultado deberia ser el siguiente:
  
