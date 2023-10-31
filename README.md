@@ -72,15 +72,15 @@ curl -X 'POST' \
 # Preparacion del la API para usar con DOCKER
 Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo las siguientes instrucciones (se utilizó UBUNTU para este ejemplo):
 <ul>
-     <li>Desde el shell instalar la siguiente version de JAVA:<br>
+     <li>- Desde el shell instalar la siguiente version de JAVA:<br>
           apt install openjdk-17-jdk openjdk-17-jre</li>
-     <li>Copiar de forma manual MAVEN 3.9.5:<br>
+     <li>- Copiar de forma manual MAVEN 3.9.5:<br>
        Bajar la version desde  https://maven.apache.org/download.cgi<br>
        Descomprimir y mover el contenido 
           tar -xzf apache-maven-3.9.5-bin.tar.gz   <br>
           sudo mv apache-maven-3.9.5 /opt/maven
      </li>
-     <li>Configurar las variables de entorno para MAVEN<br>
+     <li>- Configurar las variables de entorno para MAVEN<br>
      sudo nano /etc/profile.d/maven.sh<br><br>
 
      export JAVA_HOME=/usr/lib/jvm/default-java<br>
@@ -104,7 +104,7 @@ export TOMCAT_PORT=8084<br><br>
 source /etc/environment<br>
 mvn clean package
 </li>
-     <li>Una vez compilada nuestra app, crear el siguiente Dockerfile:
+     <li>- Una vez compilada nuestra app, crear el siguiente Dockerfile:
 'FROM ubuntu
 ##instalar nginx 'lo cambie de ultima hora iba usar TOMCAT, por eso la variable del puerto se llama asi, pero decidi usar NGINX
 RUN apt-get update
