@@ -82,30 +82,24 @@ Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo l
      </li>
      <li>- Configurar las variables de entorno para MAVEN<br>
      sudo nano /etc/profile.d/maven.sh<br><br>
-          
      export JAVA_HOME=/usr/lib/jvm/default-java<br>
      export M3_HOME=/opt/maven<br>
      export MAVEN_HOME=/opt/maven<br>
-     export PATH=${M3_HOME}/bin:${PATH}
-     <br><br>
-     
+     export PATH=${M3_HOME}/bin:${PATH}<br><br>
      sudo chmod +x /etc/profile.d/maven.sh<br>
      source /etc/profile.d/maven.sh<br><br>
      'verificar la version correcta de maven 3.9.5<br>
      mvn --version
      </li>
-     
      <li> Crear las variables de entorno  para conectarnos a MONGO ATLAS y compilar<br>
      sudo nano /etc/environment <br>
-
-export MONGO_HOSTNAME="mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb"<br>
-export MONGO_AUTH=admin<br>
-export MONGO_PORT=27017<br>
-export TOMCAT_PORT=8084<br><br>
-
-source /etc/environment<br>
-mvn clean package
-</li>
+     export MONGO_HOSTNAME="mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb"<br>
+     export MONGO_AUTH=admin<br>
+     export MONGO_PORT=27017<br>
+     export TOMCAT_PORT=8084<br><br>
+     source /etc/environment<br>
+     mvn clean package
+     </li>
      <li>- Una vez compilada nuestra app, crear el siguiente Dockerfile:
 'FROM ubuntu
 ##instalar nginx 'lo cambie de ultima hora iba usar TOMCAT, por eso la variable del puerto se llama asi, pero decidi usar NGINX
