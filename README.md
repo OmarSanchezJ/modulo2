@@ -87,12 +87,14 @@ Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo l
      export M3_HOME=/opt/maven<br>
      export MAVEN_HOME=/opt/maven<br>
      export PATH=${M3_HOME}/bin:${PATH}<br><br>
+
+     
      sudo chmod +x /etc/profile.d/maven.sh<br>
      source /etc/profile.d/maven.sh<br><br>
-     
      'verificar la version correcta de maven 3.9.5<br>
      mvn --version
      </li>
+     
      <li> Crear las variables de entorno  para conectarnos a MONGO ATLAS y compilar<br>
      sudo nano /etc/environment <br><br>
 
