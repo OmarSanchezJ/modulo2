@@ -69,7 +69,7 @@ curl -X 'POST' \
 
 <a href="api-docs.yaml">archivo YAML</a>
 
-# Preparacion del la API para usar con DOCKER
+# Pasos para crear el Docker de la API
 Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo las siguientes instrucciones (se utilizó UBUNTU para este ejemplo):
 <ul>
      <li>- Desde el shell instalar la siguiente version de JAVA:<br>
@@ -82,11 +82,12 @@ Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo l
      </li>
      <li>- Configurar las variables de entorno para MAVEN<br>
      sudo nano /etc/profile.d/maven.sh<br><br>
-
+          
      export JAVA_HOME=/usr/lib/jvm/default-java<br>
      export M3_HOME=/opt/maven<br>
      export MAVEN_HOME=/opt/maven<br>
      export PATH=${M3_HOME}/bin:${PATH}
+     <br><br>
      
      sudo chmod +x /etc/profile.d/maven.sh<br>
      source /etc/profile.d/maven.sh<br><br>
@@ -95,7 +96,7 @@ Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo l
      </li>
      
      <li> Crear las variables de entorno  para conectarnos a MONGO ATLAS y compilar<br>
-     sudo nano /etc/environment <br><br>
+     sudo nano /etc/environment <br>
 
 export MONGO_HOSTNAME="mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb"<br>
 export MONGO_AUTH=admin<br>
