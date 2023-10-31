@@ -8,11 +8,11 @@ nube (12 factores). Ademas se hace uso de swagger para documentar su funcionamie
 
 LA API hace lo siguiente:
 
-- Insertar un libro
-- Buscar un libro por su ID (el ID lo crea la BD de Mongo al agregar un libro)
-- Buscar todos los libros de la BD
-- Borrar un libro por su ID
-- Actualizar algun campo del documento "Libro"
+* Insertar un libro
+* Buscar un libro por su ID (el ID lo crea la BD de Mongo al agregar un libro)
+* Buscar todos los libros de la BD
+* Borrar un libro por su ID
+* Actualizar algun campo del documento "Libro"
 
 Antes de empezar se deberá  crear la BD en Mongo ATLAS por lo que deberemos crear una cuenta en el sitio web https://www.mongodb.com/es , deberemos crear
 la base de datos "librosdb", ademas debemos asegurarnos que la IP de nuestro localhost puede acceder a MONGO ATLAS.<br>La base tendra los siguientes parametros:<br>
@@ -21,11 +21,11 @@ password: "libreria"<br>
 
 Para ejecutar el proyecto en un ambiente local, se debe hacer de la siguiente manera:
 
-Clonar el codigo de este repositorio en una máquina local.<br>
-Abrir el proyecto en el Framework de Eclipse.<br>
-Revisar las dependencias necesarias que estan listadas en el archivo pom.xml (el archivo se encuentra en la raiz del proyecto).<br>
-Ejecutar la aplicación dentro del Framework para verificar y corregir errores.<br>
-Utilizar POSTMAN o un navegador para ejecutar las consultas de cada endpoint (mas abajo se pone los ejemplos):<br>
+* Clonar el codigo de este repositorio en una máquina local.<br>
+* Abrir el proyecto en el Framework de Eclipse.<br>
+* Revisar las dependencias necesarias que estan listadas en el archivo pom.xml (el archivo se encuentra en la raiz del proyecto).<br>
+* Ejecutar la aplicación dentro del Framework para verificar y corregir errores.<br>
+* Utilizar POSTMAN o un navegador para ejecutar las consultas de cada endpoint (mas abajo se pone los ejemplos):<br>
      
 
 # test
