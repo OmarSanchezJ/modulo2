@@ -81,7 +81,6 @@ Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo l
           sudo mv apache-maven-3.9.5 /opt/maven<br><br>
      </li>
      <li><strong>Configurar las variables de entorno para MAVEN</strong><br>
-     sudo nano /etc/profile.d/maven.sh<br><br>
      export JAVA_HOME=/usr/lib/jvm/default-java<br>
      export M3_HOME=/opt/maven<br>
      export MAVEN_HOME=/opt/maven<br>
