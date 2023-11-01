@@ -72,15 +72,15 @@ curl -X 'POST' \
 # Pasos para crear el Docker de la API
 Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo las siguientes instrucciones (se utilizó UBUNTU para este ejemplo):
 <ul>
-     <li>- Desde el shell instalar la siguiente version de JAVA:<br>
+     <li><strong>Desde el shell instalar la siguiente version de JAVA</strong><br>
           apt install openjdk-17-jdk openjdk-17-jre</li>
-     <li>- Copiar de forma manual MAVEN 3.9.5:<br>
+     <li><strong></strong>Copiar de forma manual MAVEN 3.9.5</strong><br>
        Bajar la version desde  https://maven.apache.org/download.cgi<br>
        Descomprimir y mover el contenido <br>
-          tar -xzf apache-maven-3.9.5-bin.tar.gz   <br>
+          tar -xzf apache-maven-3.9.5-bin.tar.gz<br>
           sudo mv apache-maven-3.9.5 /opt/maven
      </li>
-     <li>- Configurar las variables de entorno para MAVEN<br>
+     <li><strong></strong>Configurar las variables de entorno para MAVEN</strong><br>
      sudo nano /etc/profile.d/maven.sh<br><br>
      export JAVA_HOME=/usr/lib/jvm/default-java<br>
      export M3_HOME=/opt/maven<br>
@@ -91,7 +91,7 @@ Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo l
      'verificar la version correcta de maven 3.9.5<br>
      mvn --version
      </li>
-     <li> Crear las variables de entorno  para conectarnos a MONGO ATLAS y compilar<br>
+     <li> <strong></strong>Crear las variables de entorno  para conectarnos a MONGO ATLAS y compilar<strong></strong><br>
      sudo nano /etc/environment <br>
      export MONGO_HOSTNAME="mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb"<br>
      export MONGO_AUTH=admin<br>
@@ -100,26 +100,25 @@ Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo l
      source /etc/environment<br>
      mvn clean package
      </li>
-     <li>- Una vez compilada nuestra app, crear el siguiente Dockerfile:
-'FROM ubuntu
-##instalar nginx 'lo cambie de ultima hora iba usar TOMCAT, por eso la variable del puerto se llama asi, pero decidi usar NGINX
-RUN apt-get update
-RUN apt-get install -y nginx
-EXPOSE 80
+     <li><strong></strong>Una vez compilada nuestra app, se crea el siguiente Dockerfile</strong><br><br>
+FROM ubuntu<br>
+##instalar nginx 'lo cambie de ultima hora iba usar TOMCAT, por eso la variable del puerto se llama asi, pero decidi usar NGINX<br>
+RUN apt-get update<br>
+RUN apt-get install -y nginx<br>
+EXPOSE 80<br><br>
 
-FROM openjdk:17.0.2-jdk
-##Copiar el paquete jar file dentro de nuestra imagen
-COPY target/app.jar /api.jar
+FROM openjdk:17.0.2-jdk<br>
+##Copiar el paquete jar file dentro de nuestra imagen<br>
+COPY target/app.jar /api.jar<br><br>
 
+##Definir los valores de las variables de entorno<br>
+#ENV $MONGO_URI="mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb"<br>
+#ENV $MONGO_AUTH=admin<br>
+#ENV $MONGO_PORT=27017<br>
+#ENV $TOMCAT_PORT=8084<br><br>
 
-##Definir los valores de las variables de entorno
-#ENV $MONGO_URI="mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb"
-#ENV $MONGO_AUTH=admin
-#ENV $MONGO_PORT=27017
-#ENV $TOMCAT_PORT=8084
-
-##Ejecutar el comando del compilado para su deploy
-CMD ["java", "-jar", "/api.jar"]
+##Ejecutar el comando del compilado para su deploy<br>
+CMD ["java", "-jar", "/api.jar"]<br><br>
      </li>
 </ul>
 
