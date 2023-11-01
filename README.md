@@ -91,7 +91,7 @@ Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo l
      'verificar la version correcta de maven 3.9.5<br>
      mvn --version
      </li>
-     <li> <strong>Crear las variables de entorno  para conectarnos a MONGO ATLAS y compilar<strong></strong><br>
+     <li> <strong>Crear las variables de entorno  para conectarnos a MONGO ATLAS y compilar</strong><br>
      sudo nano /etc/environment <br>
      export MONGO_HOSTNAME="mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb"<br>
      export MONGO_AUTH=admin<br>
