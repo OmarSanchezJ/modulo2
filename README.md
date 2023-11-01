@@ -102,7 +102,7 @@ Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo l
      </li>
      <li><strong></strong>Una vez compilada nuestra app, se crea el siguiente Dockerfile</strong><br><br>
 FROM ubuntu<br>
-##instalar nginx 'lo cambie de ultima hora iba usar TOMCAT, por eso la variable del puerto se llama asi, pero decidi usar NGINX<br>
+##instalar nginx <br>
 RUN apt-get update<br>
 RUN apt-get install -y nginx<br>
 EXPOSE 80<br><br>
@@ -110,12 +110,6 @@ EXPOSE 80<br><br>
 FROM openjdk:17.0.2-jdk<br>
 ##Copiar el paquete jar file dentro de nuestra imagen<br>
 COPY target/app.jar /api.jar<br><br>
-
-##Definir los valores de las variables de entorno<br>
-#ENV $MONGO_URI="mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb"<br>
-#ENV $MONGO_AUTH=admin<br>
-#ENV $MONGO_PORT=27017<br>
-#ENV $TOMCAT_PORT=8084<br><br>
 
 ##Ejecutar el comando del compilado para su deploy<br>
 CMD ["java", "-jar", "/api.jar"]<br><br>
