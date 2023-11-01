@@ -80,7 +80,7 @@ Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo l
           tar -xzf apache-maven-3.9.5-bin.tar.gz<br>
           sudo mv apache-maven-3.9.5 /opt/maven
      </li>
-     <li><strong></strong>Configurar las variables de entorno para MAVEN</strong><br>
+     <li><strong>Configurar las variables de entorno para MAVEN</strong><br>
      sudo nano /etc/profile.d/maven.sh<br><br>
      export JAVA_HOME=/usr/lib/jvm/default-java<br>
      export M3_HOME=/opt/maven<br>
@@ -91,7 +91,7 @@ Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo l
      'verificar la version correcta de maven 3.9.5<br>
      mvn --version
      </li>
-     <li> <strong></strong>Crear las variables de entorno  para conectarnos a MONGO ATLAS y compilar<strong></strong><br>
+     <li> <strong>Crear las variables de entorno  para conectarnos a MONGO ATLAS y compilar<strong></strong><br>
      sudo nano /etc/environment <br>
      export MONGO_HOSTNAME="mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb"<br>
      export MONGO_AUTH=admin<br>
@@ -100,7 +100,7 @@ Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo l
      source /etc/environment<br>
      mvn clean package
      </li>
-     <li><strong></strong>Una vez compilada nuestra app, se crea el siguiente Dockerfile</strong><br><br>
+     <li><strong>Una vez compilada nuestra app, se crea el siguiente Dockerfile</strong><br><br>
 FROM ubuntu<br>
 ##instalar nginx <br>
 RUN apt-get update<br>
