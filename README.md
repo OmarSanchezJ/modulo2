@@ -114,7 +114,7 @@ CMD ["java", "-jar", "/api.jar"]<br><br>
      </li>
 </ul>
 
-# Poner en DOCKERHUB nuestra iamgen
+# Poner en DOCKERHUB nuestro contenedor
 <ul>
      <li><strong>Logearnos y crear un TAg de nuestro imagen</strong></li>
      docker login<br>
