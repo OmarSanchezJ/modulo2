@@ -117,10 +117,10 @@ CMD ["java", "-jar", "/api.jar"]<br><br>
 # Poner en DOCKERHUB nuestro contenedor
 <ul>
      <li><strong>Logearnos y crear un TAg de nuestro imagen</strong>
-     docker login<br>
+     <br>docker login<br>
      docker tag cloud-libros-service:spring-docker arkhamax/cloud-usuario-service:v1.0<br></li>
      <li><strong>Subir nuestra imagen a Docker HUB</strong>
-     docker push arkhamax/cloud-librios-service:v1.0<br>
+     <br>docker push arkhamax/cloud-librios-service:v1.0<br>
           la imagen de este proyecto se encuentra en el siguiente repositorio:<br>
           https://hub.docker.com/repository/docker/arkhamax/cloud-libros-service/general<br>
      </li>
