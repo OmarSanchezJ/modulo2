@@ -87,7 +87,7 @@ Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo l
      export PATH=${M3_HOME}/bin:${PATH}<br><br>
      </li>
      <li> <strong>Crear las variables de entorno  para conectarnos a MONGO ATLAS y compilar</strong><br>
-     export MONGO_HOSTNAME="mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb"<br>
+     export MONGO_URI="mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb"<br>
      export MONGO_AUTH=admin<br>
      export MONGO_PORT=27017<br>
      export TOMCAT_PORT=8084<br><br>
