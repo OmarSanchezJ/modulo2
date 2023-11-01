@@ -111,17 +111,19 @@ CMD ["java", "-jar", "/api.jar"]<br><br>
      </li>
      <li><strong>Correr nuestro contenedor con los parametros de nuestra imagen</strong><br>
      docker run -d -p 8084:8084 -e MONGO_URI="mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb" -e MONGO_AUTH=admin -e MONGO_PORT=27017 -e TOMCAT_PORT=8084 cloud-libros-service:spring-docker<br>
-
      </li>
 </ul>
 
 # Poner en DOCKERHUB nuestra iamgen
 <ul>
-     <li>Logearnos y crear un TAg de nuestro imagen</li>
-     * docker login
-     docker tag cloud-libros-service:spring-docker arkhamax/cloud-usuario-service:v1.0
-
-     <li></li>
+     <li><strong>Logearnos y crear un TAg de nuestro imagen</strong></li>
+     docker login<br>
+     docker tag cloud-libros-service:spring-docker arkhamax/cloud-usuario-service:v1.0<br>
+     <li><strong>Subir nuestra imagen a Docker HUB</strong>
+     docker push arkhamax/cloud-librios-service:v1.0<br>
+          la imagen de este proyecto se encuentra en el siguiente repositorio:<br>
+          https://hub.docker.com/repository/docker/arkhamax/cloud-libros-service/general<br>
+     </li>
 </ul>
 
 # Documentacion de referencia
