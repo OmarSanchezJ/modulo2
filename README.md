@@ -78,7 +78,7 @@ Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo l
        Bajar la version desde  https://maven.apache.org/download.cgi<br>
        Descomprimir y mover el contenido <br>
           tar -xzf apache-maven-3.9.5-bin.tar.gz<br>
-          sudo mv apache-maven-3.9.5 /opt/maven
+          sudo mv apache-maven-3.9.5 /opt/maven<br><br>
      </li>
      <li><strong>Configurar las variables de entorno para MAVEN</strong><br>
      sudo nano /etc/profile.d/maven.sh<br><br>
@@ -86,19 +86,12 @@ Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo l
      export M3_HOME=/opt/maven<br>
      export MAVEN_HOME=/opt/maven<br>
      export PATH=${M3_HOME}/bin:${PATH}<br><br>
-     sudo chmod +x /etc/profile.d/maven.sh<br>
-     source /etc/profile.d/maven.sh<br><br>
-     'verificar la version correcta de maven 3.9.5<br>
-     mvn --version
      </li>
      <li> <strong>Crear las variables de entorno  para conectarnos a MONGO ATLAS y compilar</strong><br>
-     sudo nano /etc/environment <br>
      export MONGO_HOSTNAME="mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb"<br>
      export MONGO_AUTH=admin<br>
      export MONGO_PORT=27017<br>
      export TOMCAT_PORT=8084<br><br>
-     source /etc/environment<br>
-     mvn clean package
      </li>
      <li><strong>Una vez compilada nuestra app, se crea el siguiente Dockerfile</strong><br><br>
 FROM ubuntu<br>
