@@ -21,11 +21,11 @@ password: "libreria"<br>
 
 Para ejecutar el proyecto en un ambiente local, se debe hacer de la siguiente manera:
 
-* Clonar el codigo de este repositorio en una máquina local.<br>
-* Abrir el proyecto en el Framework de Eclipse.<br>
-* Revisar las dependencias necesarias que estan listadas en el archivo pom.xml (el archivo se encuentra en la raiz del proyecto).<br>
-* Ejecutar la aplicación dentro del Framework para verificar y corregir errores.<br>
-* Utilizar POSTMAN o un navegador para ejecutar las consultas de cada endpoint (mas abajo se pone los ejemplos):<br>
++ Clonar el codigo de este repositorio en una máquina local.<br>
++ Abrir el proyecto en el Framework de Eclipse.<br>
++ Revisar las dependencias necesarias que estan listadas en el archivo pom.xml (el archivo se encuentra en la raiz del proyecto).<br>
++ Ejecutar la aplicación dentro del Framework para verificar y corregir errores.<br>
++ Utilizar POSTMAN o un navegador para ejecutar las consultas de cada endpoint (mas abajo se pone los ejemplos):<br>
      
 
 # test
