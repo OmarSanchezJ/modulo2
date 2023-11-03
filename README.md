@@ -109,12 +109,13 @@ CMD ["java", "-jar", "/api.jar"]<br><br>
      <li><strong>Construir la imagen</strong><br>
      docker build -t cloud-libros-service:spring-docker .<br>
      </li>
-     <li><strong>Correr nuestro contenedor con los parametros de nuestra imagen</strong><br>
-     docker run -d -p 8084:8084 -e MONGO_URI="mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb" -e MONGO_AUTH=admin -e MONGO_PORT=27017 -e TOMCAT_PORT=8084 cloud-libros-service:spring-docker<br>
-     </li>
-</ul>
+     </ul>
+     
+# Correr nuestro contenedor DOCKER con los parametros de nuestra imagen
 
-# Poner en DOCKER HUB nuestro contenedor
+     docker run -d -p 8084:8084 -e MONGO_URI="mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb" -e MONGO_AUTH=admin -e MONGO_PORT=27017 -e TOMCAT_PORT=8084 cloud-libros-service:spring-docker<br>
+
+* Poner en DOCKER HUB nuestro contenedor
 <ul>
      <li><strong>Logearnos y crear un TAG de nuestro imagen</strong>
      <br>docker login<br>
