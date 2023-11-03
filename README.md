@@ -114,7 +114,7 @@ CMD ["java", "-jar", "/api.jar"]<br><br>
      </li>
 </ul>
 
-# Poner en DOCKERHUB nuestro contenedor
+# Poner en DOCKER HUB nuestro contenedor
 <ul>
      <li><strong>Logearnos y crear un TAG de nuestro imagen</strong>
      <br>docker login<br>
