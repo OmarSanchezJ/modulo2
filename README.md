@@ -1,5 +1,5 @@
 # API de una libreria, proyecto Diplomado UNAM<br>
-<h3>Proyecto de un microservicio usando Docker v1.0</h3><br>
+<h3>Proyecto de un microservicio REST, corriendo de forma local, usando Docker y Kubernetes - v1.0</h3><br>
 Microservicio para agregar, mostrar por ID, borrar por ID, actualizar por ID  y mostrar una coleccion completa de libros
 
 El microservicio agrega un documento a la colección "libros" y despliega los metodos PUT, GET, DELETE y UPDATE de los libros usando mongodb como base de datos NON-SQL y se utiliza un archivo para crear la base de datos librosdb, el cual se ejecuta desde un MONGO en ATLAS.<br>
