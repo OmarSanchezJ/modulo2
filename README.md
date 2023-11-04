@@ -111,7 +111,7 @@ CMD ["java", "-jar", "/api.jar"]<br><br>
      </li>
      </ul>
      
-# Correr nuestro contenedor DOCKER con los parametros de nuestra imagen
+# Correr nuestra API en  DOCKER con las variables de entorno
 
      docker run -d -p 8084:8084 -e MONGO_URI="mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb" -e MONGO_AUTH=admin -e MONGO_PORT=27017 -e TOMCAT_PORT=8084 cloud-libros-service:spring-docker<br>
 
@@ -126,6 +126,8 @@ CMD ["java", "-jar", "/api.jar"]<br><br>
           https://hub.docker.com/repository/docker/arkhamax/cloud-libros-service/general<br>
      </li>
 </ul>
+
+# Correr nuestra API en KUBERNETES con las variables de entorno
 
 # Documentacion de referencia
 <a href="https://maven.apache.org/guides/index.html">Official Apache Maven documentation</a>
