@@ -1,8 +1,0 @@
-/home/clouduser/diplo_modulo2/libros-service/libros-servicio/src/main/java/unam/diplomado/modulo2/librosservices/config/OpenApiConfig.java
-/home/clouduser/diplo_modulo2/libros-service/libros-servicio/src/main/java/unam/diplomado/modulo2/librosservice/domain/Libro.java
-/home/clouduser/diplo_modulo2/libros-service/libros-servicio/src/main/java/unam/diplomado/modulo2/librosservice/api/LibroApi.java
-/home/clouduser/diplo_modulo2/libros-service/libros-servicio/src/main/java/unam/diplomado/modulo2/librosservice/service/LibroServiceApplication.java
-/home/clouduser/diplo_modulo2/libros-service/libros-servicio/src/main/java/unam/diplomado/modulo2/librosservice/service/LibroService.java
-/home/clouduser/diplo_modulo2/libros-service/libros-servicio/src/main/java/unam/diplomado/modulo2/librosservice/service/LibroServiceImpl.java
-/home/clouduser/diplo_modulo2/libros-service/libros-servicio/src/main/java/unam/diplomado/modulo2/librosservice/api/LibroController.java
-/home/clouduser/diplo_modulo2/libros-service/libros-servicio/src/main/java/unam/diplomado/modulo2/librosservice/repository/LibroRepository.java
