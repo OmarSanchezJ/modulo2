@@ -136,74 +136,75 @@ Primero deberemos de hacer nuestros Manifiestos de los siguientes archivos:
 * libros-ingress.yaml
 * configmap.yaml
 
-  <strong>libros-deployment</strong>
 
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: libros-deployment
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: libros-rest
-  template:
-    metadata:
-      labels:
-        app: libros-rest
-    spec:
-      containers:
-        - name: libros-rest-container
-          image: cloud-libros-service:spring-docker arkhamax/cloud-usuario-service:v1.0
-          ports:
-            - containerPort: 8084
-            - containerPort: 27017
+<strong>libros-deployment</strong>
+
+apiVersion: apps/v1<br>
+kind: Deployment<br>
+metadata:<br>
+  name: libros-deployment<br>
+spec:<br>
+  replicas: 1<br>
+  selector:<br>
+    matchLabels:<br>
+      app: libros-rest<br>
+  template:<br>
+    metadata:<br>
+      labels:<br>
+        app: libros-rest<br>
+    spec:<br>
+      containers:<br>
+        - name: libros-rest-container<br>
+          image: cloud-libros-service:spring-docker arkhamax/cloud-usuario-service:v1.0<br>
+          ports:<br>
+            - containerPort: 8084<br>
+            - containerPort: 27017<br>
 
 <strong>libros-services.yaml</strong>
 
-apiVersion: v1
-kind: Service
-metadata:
-  name: libros-rest-service
-spec:
-  selector:
-    app: libros-rest
-  ports:
-      - protocol: TCP
-        name: TOMCAT_PORT
-        port: 80
-        targetPort: 8084
-        name: MONGO_PORT
-        port: 27017
-        targetPort: 27017
+apiVersion: v1<br>
+kind: Service<br>
+metadata:<br>
+  name: libros-rest-service<br>
+spec:<br>
+  selector:<br>
+    app: libros-rest<br>
+  ports:<br>
+      - protocol: TCP<br>
+        name: TOMCAT_PORT<br>
+        port: 80<br>
+        targetPort: 8084<br>
+        name: MONGO_PORT<br>
+        port: 27017<br>
+        targetPort: 27017<br>
 
 <strong>libros-ingress.yaml</strong>        
 
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: libros-rest-ingress
-spec:
-  rules:
-    - host: k8s.nuup.ninja
-      http:
-        paths:
-          - path: /libros
-            pathType: Prefix
-            backend:
-              service:
-                name: libros-rest-service
-                port:
-                  number: 8084
-                  number: 27017
+apiVersion: networking.k8s.io/v1<br>
+kind: Ingress<br>
+metadata:<br>
+  name: libros-rest-ingress<br>
+spec:<br>
+  rules:<br>
+    - host: k8s.nuup.ninja<br>
+      http:<br>
+        paths:<br>
+          - path: /libros<br>
+            pathType: Prefix<br>
+            backend:<br>
+              service:<br>
+                name: libros-rest-service<br>
+                port:<br>
+                  number: 8084<br>
+                  number: 27017<br>
 
 <strong>configmap.yaml</strong>
 
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: libros-configmap
-data:
+apiVersion: v1<br>
+kind: ConfigMap<br>
+metadata:<br>
+  name: libros-configmap<br>
+data:<br>
   MONGO_URI: mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb<br>
   MONGO_AUTH: admin<br>
   MONGO_PORT: 27017<br>
