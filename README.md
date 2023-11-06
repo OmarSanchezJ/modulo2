@@ -156,6 +156,27 @@ spec:<br>
       containers:<br>
         - name: libros-rest-container<br>
           image: cloud-libros-service:spring-docker arkhamax/cloud-usuario-service:v1.0<br>
+          env: <br>
+            - name: MONGO_URI<br>           
+              valueFrom: 
+              configMapKeyRef:<br>
+               name: libros-configmap<br>
+               key: mongo_uri<br>
+            - name: MONGO_AUTH<br>  
+              valueFrom: 
+               configMapKeyRef:<br>
+                name: libros-configmap<br>
+                key: mongo_auth<br>
+            - name: MONGO_PORT<br>
+              valueFrom: 
+               configMapKeyRef:<br>
+                name: libros-configmap<br>
+                key: mongo_port
+            - name: TOMCAT_PORT<br>
+              valueFrom:
+               configMapKeyRef:<br>
+                name: libros-configmap<br>
+                key: tomcat_port
           ports:<br>
             - containerPort: 8084<br>
             - containerPort: 27017<br>
