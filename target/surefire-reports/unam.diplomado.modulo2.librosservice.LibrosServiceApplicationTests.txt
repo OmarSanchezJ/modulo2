@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: unam.diplomado.modulo2.librosservice.LibrosServiceApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.929 s - in unam.diplomado.modulo2.librosservice.LibrosServiceApplicationTests

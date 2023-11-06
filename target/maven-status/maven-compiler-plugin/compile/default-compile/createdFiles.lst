@@ -1,0 +1,10 @@
+unam/diplomado/modulo2/librosservice/api/LibroApi.class
+unam/diplomado/modulo2/librosservice/domain/Libro.class
+unam/diplomado/modulo2/librosservice/LibroServiceApplication.class
+unam/diplomado/modulo2/librosservice/repository/LibroRepository.class
+unam/diplomado/modulo2/librosservice/package-info.class
+unam/diplomado/modulo2/librosservice/config/OpenApiConfig.class
+unam/diplomado/modulo2/librosservice/service/LibroService.class
+unam/diplomado/modulo2/librosservice/service/LibroServiceImpl.class
+unam/diplomado/modulo2/librosservice/api/LibroController.class
+unam/diplomado/modulo2/librosservice/config/package-info.class
