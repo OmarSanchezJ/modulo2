@@ -129,6 +129,88 @@ CMD ["java", "-jar", "/api.jar"]<br><br>
 
 # Correr nuestra API en KUBERNETES con las variables de entorno
 
+Primero deberemos de hacer nuestros Manifiestos de los siguientes archivos:
+
+* libros-deployment.yaml
+* libros-services.yaml
+* libros-ingress.yaml
+* configmap.yaml
+
+  <strong>libros-deployment</strong>
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: libros-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: libros-rest
+  template:
+    metadata:
+      labels:
+        app: libros-rest
+    spec:
+      containers:
+        - name: libros-rest-container
+          image: cloud-libros-service:spring-docker arkhamax/cloud-usuario-service:v1.0
+          ports:
+            - containerPort: 8084
+            - containerPort: 27017
+
+<strong>libros-services.yaml</strong>
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: libros-rest-service
+spec:
+  selector:
+    app: libros-rest
+  ports:
+      - protocol: TCP
+        name: TOMCAT_PORT
+        port: 80
+        targetPort: 8084
+        name: MONGO_PORT
+        port: 27017
+        targetPort: 27017
+
+<strong>libros-ingress.yaml</strong>        
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: libros-rest-ingress
+spec:
+  rules:
+    - host: k8s.nuup.ninja
+      http:
+        paths:
+          - path: /libros
+            pathType: Prefix
+            backend:
+              service:
+                name: libros-rest-service
+                port:
+                  number: 8084
+                  number: 27017
+
+<strong>configmap.yaml</strong>
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: libros-configmap
+data:
+  MONGO_URI: mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb<br>
+  MONGO_AUTH: admin<br>
+  MONGO_PORT: 27017<br>
+  TOMCAT_PORT: 8084<br><br>
+
+
+
 # Documentacion de referencia
 <a href="https://maven.apache.org/guides/index.html">Official Apache Maven documentation</a>
 
