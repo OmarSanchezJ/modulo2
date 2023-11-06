@@ -162,8 +162,8 @@ spec:<br>
               configMapKeyRef:<br>
                name: libros-configmap<br>
                key: mongo_uri<br>
-            - name: MONGO_AUTH<br>  
-              valueFrom: <br>
+            - name: MONGO_AUTH<br>
+               valueFrom: <br>
                configMapKeyRef:<br>
                 name: libros-configmap<br>
                 key: mongo_auth<br>
