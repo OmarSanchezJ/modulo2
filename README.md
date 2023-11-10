@@ -139,46 +139,47 @@ Primero deberemos de hacer nuestros Manifiestos de los siguientes archivos:
 
 <strong>libros-deployment</strong>
 
-apiVersion: apps/v1<br>
-kind: Deployment<br>
-metadata:<br>
-  name: libros-deployment<br>
-spec:<br>
-  replicas: 1<br>
-  selector:<br>
-    matchLabels:<br>
-      app: libros-rest<br>
-  template:<br>
-    metadata:<br>
-      labels:<br>
-        app: libros-rest<br>
-    spec:<br>
-      containers:<br>
-        - name: libros-rest-container<br>
-          image: cloud-libros-service:spring-docker arkhamax/cloud-usuario-service:v1.0<br>
-          env: <br>
-            - name: MONGO_URI <br>valueFrom: <br>
-              configMapKeyRef:<br>
-               name: libros-configmap<br>
-               key: mongo_uri<br>
-            - name: MONGO_AUTH<br>
-               valueFrom: <br>
-               configMapKeyRef:<br>
-                name: libros-configmap<br>
-                key: mongo_auth<br>
-            - name: MONGO_PORT<br>
-              valueFrom: 
-               configMapKeyRef:<br>
-                name: libros-configmap<br>
-                key: mongo_port
-            - name: TOMCAT_PORT<br>
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: libros-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: libros-rest
+  template:
+    metadata:
+      labels:
+        app: libros-rest
+    spec:
+      containers:
+        - name: libros-dockercontainer
+          image: arkhamax/cloud-libros-service:v1.0
+          ports:
+            - containerPort: 80
+          env:
+            - name: MONGO_URI
               valueFrom:
-               configMapKeyRef:<br>
-                name: libros-configmap<br>
-                key: tomcat_port
-          ports:<br>
-            - containerPort: 8084<br>
-            - containerPort: 27017<br>
+                configMapKeyRef:
+                  name: libros-configmap
+                  key: mongo_uri
+            - name: MONGO_AUTH
+              valueFrom:
+                configMapKeyRef:
+                  name: libros-configmap
+                  key: mongo_auth
+            - name: MONGO_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: libros-configmap
+                  key: mongo_port
+            - name: TOMCAT_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: libros-configmap
+                  key: tomcat_port
+      l
 
 <strong>libros-services.yaml</strong>
 
