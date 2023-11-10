@@ -266,14 +266,14 @@ curl -X 'POST' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
-    "titulo":"Doce cuentos peregrinos",
+    "titulo":"El amor en tiempos de colera",
     "autores":"Gabriel García Márquez",
     "editorial":"Diana",
-    "edicion":2022,
-    "paginas":700,
-    "precio":420,
-    "existencia":10,
-    "isbn":"978-0140239409"
+    "edicion":2023,
+    "paginas":546,
+    "precio":399,
+    "existencia":18,
+    "isbn":"911-01568409"
 }'    
 ```
 # Documentacion de referencia
