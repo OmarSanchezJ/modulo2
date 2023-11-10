@@ -209,20 +209,25 @@ spec:<br<
 apiVersion: networking.k8s.io/v1<br>
 kind: Ingress<br>
 metadata:<br>
-  name: libros-rest-ingress<br>
+  name: libros-ingress<br>
 spec:<br>
+  ingressClassName: nginx<br>
   rules:<br>
-    - host: k8s.nuup.ninja<br>
+    - host: localhost<br>
       http:<br>
         paths:<br>
-          - path: /libros<br>
+          - path: /api/libros<br>
             pathType: Prefix<br>
             backend:<br>
               service:<br>
-                name: libros-rest-service<br>
+                name: web80<br>
+                port:<br>
+                  number: 80<br>
+            backend:<br>
+              service:<br>
+                name: libros-service<br>
                 port:<br>
                   number: 8084<br>
-                  number: 27017<br>
 
 <strong>configmap.yaml</strong>
 
