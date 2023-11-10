@@ -123,7 +123,7 @@ docker build -t cloud-libros-service:spring-docker .<br><br>
      docker run -d -p 8084:8084 -e MONGO_URI="mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb" -e MONGO_AUTH=admin -e MONGO_PORT=27017 -e TOMCAT_PORT=8084 cloud-libros-service:spring-docker
 ```
 
-* Poner en DOCKER HUB nuestro contenedor<br>
+* Poner en DOCKER HUB nuestro contenedor<br><br>
      <strong>Logearnos y crear un TAG de nuestro imagen</strong>
      <br>docker login<br>
      docker tag cloud-libros-service:spring-docker arkhamax/cloud-usuario-service:v1.0<br><br>
