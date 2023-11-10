@@ -86,22 +86,25 @@ Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo l
           sudo mv apache-maven-3.9.5 /opt/maven<br><br>
      
      <strong>Configurar las variables de entorno para MAVEN</strong><br><br>
+     
      ```     
-     export JAVA_HOME=/usr/lib/jvm/default-java<br>
-     export M3_HOME=/opt/maven<br>
-     export MAVEN_HOME=/opt/maven<br>
-     export PATH=${M3_HOME}/bin:${PATH}<br><br>
+     export JAVA_HOME=/usr/lib/jvm/default-java
+     export M3_HOME=/opt/maven
+     export MAVEN_HOME=/opt/maven
+     export PATH=${M3_HOME}/bin:${PATH}
      ```
      
      <strong>Crear las variables de entorno  para conectarnos a MONGO ATLAS y compilar</strong><br><br>
+     
      ```
-     export MONGO_URI="mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb"<br>
-     export MONGO_AUTH=admin<br>
-     export MONGO_PORT=27017<br>
-     export TOMCAT_PORT=8084<br><br>
+     export MONGO_URI="mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb"
+     export MONGO_AUTH=admin
+     export MONGO_PORT=27017
+     export TOMCAT_PORT=8084
      ```
      
    <strong>Una vez compilada nuestra app, se crea el siguiente Dockerfile</strong><br><br>
+   
 ```
 FROM ubuntu
 ##instalar nginx 
@@ -193,6 +196,7 @@ spec:<br>
 
 <strong>libros-service.yaml</strong>
 
+```
 apiVersion: v1<br>
 kind: Service<br>
 metadata:<br>
@@ -213,6 +217,7 @@ spec:<br<
       protocol: TCP<br>
       port: 27017<br>
       targetPort: 27017<br><br>
+```
 
 <strong>libros-ingress.yaml</strong>        
 
