@@ -35,6 +35,7 @@ Para ejecutar el proyecto en un ambiente local, se debe hacer de la siguiente ma
 # test
 Ejecutar el siguiente curl para saber si la API esta "corriendo" correctamente.
 
+```
 curl -X 'POST' \
   'http://localhost:8084/api/libros' \
   -H 'accept: application/json' \
@@ -49,7 +50,7 @@ curl -X 'POST' \
     "existencia":10,
     "isbn":"978-0140239409"
 }'    
-
+```
 
  El resultado deberia ser el siguiente:
  
