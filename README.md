@@ -250,7 +250,7 @@ data:
   MONGO_PORT: "27017"
   TOMCAT_PORT: "8084"
 ```
-<strong>Creación de los apply de deployment, service, ingress y configmap</strong>
+<strong>Creación de los apply de deployment, service, ingress y configmap</strong><br>
 kubectl apply -f libros-deployment.yaml<br>
 kubectl apply -f libros-service.yaml<br>
 kubectl apply -f libros-ingress.yaml<br>
