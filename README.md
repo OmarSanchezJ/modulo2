@@ -113,7 +113,7 @@ COPY target/app.jar /api.jar
 ##Ejecutar el comando del compilado para su deploy
 CMD ["java", "-jar", "/api.jar"]
 ```
-<strong>Construir la imagen</strong>
+<strong>Construir la imagen</strong><br>
 docker build -t cloud-libros-service:spring-docker .<br><br>
      
      
