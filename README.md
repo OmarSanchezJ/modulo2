@@ -27,8 +27,10 @@ Para ejecutar el proyecto en un ambiente local, se debe hacer de la siguiente ma
 + Ejecutar la aplicación dentro del Framework para verificar y corregir errores.<br>
 + Utilizar POSTMAN o un navegador para ejecutar las consultas de cada endpoint (mas abajo se pone los ejemplos):<br>
      
-# IMPORTANTE revisar en MONGO ATLAS los permisos de acceso de IP
-Para nuestros entornos local, en Docker y en Kubernetes, en cada paso deberemos agregar la IP correspondiente para que se pueda accesar a la DB
+> [!IMPORTANT]
+> IMPORTANTE revisar en MONGO ATLAS los permisos de acceso de I
+> Para nuestros entornos local, en Docker y en Kubernetes, en cada paso deberemos agregar la IP correspondiente para que se pueda accesar a la DB
+
 
 # test
 Ejecutar el siguiente curl para saber si la API esta "corriendo" correctamente.
