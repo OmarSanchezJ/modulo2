@@ -86,16 +86,24 @@ Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo l
           sudo mv apache-maven-3.9.5 /opt/maven<br><br>
      </li>
      <li><strong>Configurar las variables de entorno para MAVEN</strong><br>
+    
+     ```     
      export JAVA_HOME=/usr/lib/jvm/default-java<br>
      export M3_HOME=/opt/maven<br>
      export MAVEN_HOME=/opt/maven<br>
      export PATH=${M3_HOME}/bin:${PATH}<br><br>
+     ```
+     
      </li>
      <li> <strong>Crear las variables de entorno  para conectarnos a MONGO ATLAS y compilar</strong><br>
+
+     ```
      export MONGO_URI="mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb"<br>
      export MONGO_AUTH=admin<br>
      export MONGO_PORT=27017<br>
      export TOMCAT_PORT=8084<br><br>
+     ```
+     
      </li>
      <li><strong>Una vez compilada nuestra app, se crea el siguiente Dockerfile</strong><br><br>
 FROM ubuntu<br>
