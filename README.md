@@ -113,8 +113,8 @@ COPY target/app.jar /api.jar
 ##Ejecutar el comando del compilado para su deploy
 CMD ["java", "-jar", "/api.jar"]
 ```
-     <strong>Construir la imagen</strong>
-     docker build -t cloud-libros-service:spring-docker .<br><br>
+<strong>Construir la imagen</strong>
+docker build -t cloud-libros-service:spring-docker .<br><br>
      
      
 # Correr nuestra API en  DOCKER con las variables de entorno
@@ -188,10 +188,8 @@ spec:
                 configMapKeyRef:
                   name: libros-configmap
                   key: tomcat_port
-      ```
-
+```
 <strong>libros-service.yaml</strong>
-
 
 ```
 apiVersion: v1<br>
