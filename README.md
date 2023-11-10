@@ -89,7 +89,6 @@ Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo l
      export M3_HOME=/opt/maven
      export MAVEN_HOME=/opt/maven
      export PATH=${M3_HOME}/bin:${PATH}
-     
      <br><br>
      <strong>Crear las variables de entorno  para conectarnos a MONGO ATLAS y compilar</strong>
      
