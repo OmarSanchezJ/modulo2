@@ -77,12 +77,12 @@ curl -X 'POST' \
 # Pasos para crear el Docker de la API
 Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo las siguientes instrucciones (se utilizó UBUNTU para este ejemplo):
      <strong>Desde el shell instalar la siguiente version de JAVA</strong><br>
-         + apt install openjdk-17-jdk openjdk-17-jre</li>
+     + apt install openjdk-17-jdk openjdk-17-jre</li>
      <strong></strong>Copiar de forma manual MAVEN 3.9.5</strong><br>
-       + Bajar la version desde  https://maven.apache.org/download.cgi<br>
+     + Bajar la version desde  https://maven.apache.org/download.cgi<br>
        Descomprimir y mover el contenido <br>
-        +  tar -xzf apache-maven-3.9.5-bin.tar.gz<br>
-         + sudo mv apache-maven-3.9.5 /opt/maven<br><br>
+     +  tar -xzf apache-maven-3.9.5-bin.tar.gz<br>
+     + sudo mv apache-maven-3.9.5 /opt/maven<br><br>
      <strong>Configurar las variables de entorno para MAVEN</strong>
      
      export JAVA_HOME=/usr/lib/jvm/default-java
@@ -113,7 +113,6 @@ COPY target/app.jar /api.jar
 ##Ejecutar el comando del compilado para su deploy
 CMD ["java", "-jar", "/api.jar"]
 ```
-
      <strong>Construir la imagen</strong>
      docker build -t cloud-libros-service:spring-docker .<br><br>
      
@@ -193,6 +192,7 @@ spec:
 
 <strong>libros-service.yaml</strong>
 
+
 ```
 apiVersion: v1<br>
 kind: Service<br>
@@ -218,6 +218,7 @@ spec:<br<
 
 <strong>libros-ingress.yaml</strong>        
 
+```
 apiVersion: networking.k8s.io/v1<br>
 kind: Ingress<br>
 metadata:<br>
@@ -243,15 +244,17 @@ spec:<br>
 
 <strong>configmap.yaml</strong>
 
-apiVersion: v1<br>
-kind: ConfigMap<br>
-metadata:<br>
-  name: libros-configmap<br>
-data:<br>
-  MONGO_URI: "mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb"<br>
+```
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: libros-configmap
+data:
+  MONGO_URI: "mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb"
   MONGO_AUTH: admin<br>
-  MONGO_PORT: "27017"<br>
-  TOMCAT_PORT: "8084"<br><br>
+  MONGO_PORT: "27017"
+  TOMCAT_PORT: "8084"
+```
 
 <strong>Creación de los apply de deployment, service, ingress y configmap</strong>
 kubectl apply -f libros-deployment.yaml<br>
@@ -261,10 +264,10 @@ kubectl apply -f libros-configmap.yaml<br>
 
 <strong> Correr la </strong>
 Ejecutamos nuestro pod de forma interactiva<br>
- kubectl exec -it libros-deployment-75f7b65c8b-7wh48 -- /bin/bash<br>
+ kubectl exec -it libros-deployment-75f7b65c8b-7wh48 -- /bin/bash<br><br>
+Nos metemos al bash y ejecutamos la misma estructura del CURL anterior (con diferentes datos):
 
-Nos metemos al bash y ejecutamos el mismo CURL anterior (con diferentes datos):
-
+```
 curl -X 'POST' \
   'http://localhost:8084/api/libros' \
   -H 'accept: application/json' \
@@ -279,6 +282,7 @@ curl -X 'POST' \
     "existencia":10,
     "isbn":"978-0140239409"
 }'    
+```
 
 
 # Documentacion de referencia
