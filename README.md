@@ -241,13 +241,32 @@ data:<br>
   MONGO_PORT: "27017"<br>
   TOMCAT_PORT: "8084"<br><br>
 
-<strong>Creación de los apply depods, services, ingress y configmap</strong>
+<strong>Creación de los apply de deployment, service, ingress y configmap</strong>
 kubectl apply -f libros-deployment.yaml<br>
 kubectl apply -f libros-service.yaml<br>
 kubectl apply -f libros-ingress.yaml<br>
 kubectl apply -f libros-configmap.yaml<br>
 
+<strong> Correr la </strong>
+Ejecutamos nuestro pod de forma interactiva<br>
+ kubectl exec -it libros-deployment-75f7b65c8b-7wh48 -- /bin/bash<br>
 
+Nos metemos al bash y ejecutamos el mismo CURL anterior (con diferentes datos):
+
+curl -X 'POST' \
+  'http://localhost:8084/api/libros' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "titulo":"Doce cuentos peregrinos",
+    "autores":"Gabriel García Márquez",
+    "editorial":"Diana",
+    "edicion":2022,
+    "paginas":700,
+    "precio":420,
+    "existencia":10,
+    "isbn":"978-0140239409"
+}'    
 
 
 # Documentacion de referencia
