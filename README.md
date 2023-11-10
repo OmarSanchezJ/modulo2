@@ -124,16 +124,14 @@ docker build -t cloud-libros-service:spring-docker .<br><br>
 ```
 
 * Poner en DOCKER HUB nuestro contenedor
-<ul>
-     <li><strong>Logearnos y crear un TAG de nuestro imagen</strong>
+     <strong>Logearnos y crear un TAG de nuestro imagen</strong>
      <br>docker login<br>
-     docker tag cloud-libros-service:spring-docker arkhamax/cloud-usuario-service:v1.0<br></li>
-     <li><strong>Subir nuestra imagen a Docker HUB</strong>
-     <br>docker push arkhamax/cloud-librios-service:v1.0<br>
+     docker tag cloud-libros-service:spring-docker arkhamax/cloud-usuario-service:v1.0<br><br>
+     <strong>Subir nuestra imagen a Docker HUB</strong><br>
+     docker push arkhamax/cloud-librios-service:v1.0<br><br>
           la imagen de este proyecto se encuentra en el siguiente repositorio:<br>
           https://hub.docker.com/repository/docker/arkhamax/cloud-libros-service/general<br>
-     </li>
-</ul>
+     
 
 # Correr nuestra API en KUBERNETES con las variables de entorno
 
@@ -192,54 +190,53 @@ spec:
 <strong>libros-service.yaml</strong>
 
 ```
-apiVersion: v1<br>
-kind: Service<br>
-metadata:<br>
-  name: libros-service<br>
-spec:<br<
-  selector:<br>
-    app: libros-rest<br>
-  ports:<br>
-    - name: http<br>
-      protocol: TCP<br>
-      port: 80<br>
-      targetPort: 80<br>
-    - name: portapp<br>
-      protocol: TCP<br>
-      port: 8084<br>
-      targetPort: 8084<br>
-    - name: mongoatlas<br>
-      protocol: TCP<br>
-      port: 27017<br>
-      targetPort: 27017<br><br>
+apiVersion: v1
+kind: Service
+metadata:
+  name: libros-service
+spec:
+  selector:
+    app: libros-rest
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80
+    - name: portapp
+      protocol: TCP
+      port: 8084
+      targetPort: 8084
+    - name: mongoatlas
+      protocol: TCP
+      port: 27017
+      targetPort: 27017
 ```
-
 <strong>libros-ingress.yaml</strong>        
 
 ```
-apiVersion: networking.k8s.io/v1<br>
-kind: Ingress<br>
-metadata:<br>
-  name: libros-ingress<br>
-spec:<br>
-  ingressClassName: nginx<br>
-  rules:<br>
-    - host: localhost<br>
-      http:<br>
-        paths:<br>
-          - path: /api/libros<br>
-            pathType: Prefix<br>
-            backend:<br>
-              service:<br>
-                name: web80<br>
-                port:<br>
-                  number: 80<br>
-            backend:<br>
-              service:<br>
-                name: libros-service<br>
-                port:<br>
-                  number: 8084<br>
-
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: libros-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: localhost
+      http:
+        paths:
+          - path: /api/libros
+            pathType: Prefix
+            backend:
+              service:
+                name: web80
+                port:
+                  number: 80
+            backend:
+              service:
+                name: libros-service
+                port:
+                  number: 8084
+```
 <strong>configmap.yaml</strong>
 
 ```
@@ -253,7 +250,6 @@ data:
   MONGO_PORT: "27017"
   TOMCAT_PORT: "8084"
 ```
-
 <strong>Creación de los apply de deployment, service, ingress y configmap</strong>
 kubectl apply -f libros-deployment.yaml<br>
 kubectl apply -f libros-service.yaml<br>
@@ -281,8 +277,6 @@ curl -X 'POST' \
     "isbn":"978-0140239409"
 }'    
 ```
-
-
 # Documentacion de referencia
 <a href="https://maven.apache.org/guides/index.html">Official Apache Maven documentation</a>
 
