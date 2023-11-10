@@ -89,15 +89,13 @@ Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo l
      export M3_HOME=/opt/maven
      export MAVEN_HOME=/opt/maven
      export PATH=${M3_HOME}/bin:${PATH}
-     <br><br>
-     <strong>Crear las variables de entorno  para conectarnos a MONGO ATLAS y compilar</strong>
+    
+   <strong>Crear las variables de entorno  para conectarnos a MONGO ATLAS y compilar</strong>
      
-     ```
      export MONGO_URI="mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb"
      export MONGO_AUTH=admin
      export MONGO_PORT=27017
      export TOMCAT_PORT=8084
-     ```
      
    <strong>Una vez compilada nuestra app, se crea el siguiente Dockerfile</strong><br><br>
    
