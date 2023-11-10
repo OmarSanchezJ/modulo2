@@ -85,7 +85,7 @@ Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo l
           tar -xzf apache-maven-3.9.5-bin.tar.gz<br>
           sudo mv apache-maven-3.9.5 /opt/maven<br><br>
      
-     <strong>Configurar las variables de entorno para MAVEN</strong><br><br>
+     <strong>Configurar las variables de entorno para MAVEN</strong>
      
      ```     
      export JAVA_HOME=/usr/lib/jvm/default-java
@@ -94,7 +94,7 @@ Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo l
      export PATH=${M3_HOME}/bin:${PATH}
      ```
      
-     <strong>Crear las variables de entorno  para conectarnos a MONGO ATLAS y compilar</strong><br><br>
+     <strong>Crear las variables de entorno  para conectarnos a MONGO ATLAS y compilar</strong>
      
      ```
      export MONGO_URI="mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb"
@@ -126,7 +126,9 @@ CMD ["java", "-jar", "/api.jar"]
      
 # Correr nuestra API en  DOCKER con las variables de entorno
 
-     docker run -d -p 8084:8084 -e MONGO_URI="mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb" -e MONGO_AUTH=admin -e MONGO_PORT=27017 -e TOMCAT_PORT=8084 cloud-libros-service:spring-docker<br>
+```
+     docker run -d -p 8084:8084 -e MONGO_URI="mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb" -e MONGO_AUTH=admin -e MONGO_PORT=27017 -e TOMCAT_PORT=8084 cloud-libros-service:spring-docker
+```
 
 * Poner en DOCKER HUB nuestro contenedor
 <ul>
@@ -152,47 +154,48 @@ Primero deberemos de hacer nuestros Manifiestos de los siguientes archivos (util
 
 <strong>libros-deployment</strong>
 
-apiVersion: apps/v1<br>
-kind: Deployment<br>
-metadata:<br>
-  name: libros-deployment<br>
-spec:<br>
-  replicas: 1<br>
-  selector:<br>
-    matchLabels:<br>
-      app: libros-rest<br>
-  template:<br>
-    metadata:<br>
-      labels:<br>
-        app: libros-rest<br>
-    spec:<br>
-      containers:<br>
-        - name: libros-dockercontainer<br>
-          image: arkhamax/cloud-libros-service:v1.0<br>
-          ports:<br>
-            - containerPort: 80<br>
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: libros-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: libros-rest
+  template:
+    metadata:
+      labels:
+        app: libros-rest
+    spec:
+      containers:
+        - name: libros-dockercontainer
+          image: arkhamax/cloud-libros-service:v1.0
+          ports:
+            - containerPort: 80
           env:<br>
-            - name: MONGO_URI<br>
-              valueFrom:<br>
-                configMapKeyRef:<br>
-                  name: libros-configmap<br>
-                  key: mongo_uri<br>
-            - name: MONGO_AUTH<br>
-              valueFrom:<br>
-                configMapKeyRef:<br>
-                  name: libros-configmap<br>
-                  key: mongo_auth<br>
-            - name: MONGO_PORT<br>
-              valueFrom:<br>
-                configMapKeyRef:<br>
-                  name: libros-configmap<br>
-                  key: mongo_port<br>
-            - name: TOMCAT_PORT<br>
-              valueFrom:<br>
-                configMapKeyRef:<br>
-                  name: libros-configmap<br>
-                  key: tomcat_port<br><br>
-      l
+            - name: MONGO_URI
+              valueFrom:
+                configMapKeyRef:
+                  name: libros-configmap
+                  key: mongo_uri
+            - name: MONGO_AUTH
+              valueFrom:
+                configMapKeyRef:
+                  name: libros-configmap
+                  key: mongo_auth
+            - name: MONGO_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: libros-configmap
+                  key: mongo_port
+            - name: TOMCAT_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: libros-configmap
+                  key: tomcat_port
+      ```
 
 <strong>libros-service.yaml</strong>
 
