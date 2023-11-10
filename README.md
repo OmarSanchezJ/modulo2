@@ -129,7 +129,7 @@ CMD ["java", "-jar", "/api.jar"]<br><br>
 
 # Correr nuestra API en KUBERNETES con las variables de entorno
 
-Primero deberemos de hacer nuestros Manifiestos de los siguientes archivos:
+Primero deberemos de hacer nuestros Manifiestos de los siguientes archivos (utilizamos nano para crear los archivos):
 
 * libros-deployment.yaml
 * libros-services.yaml
@@ -236,10 +236,17 @@ kind: ConfigMap<br>
 metadata:<br>
   name: libros-configmap<br>
 data:<br>
-  MONGO_URI: mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb<br>
+  MONGO_URI: "mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb"<br>
   MONGO_AUTH: admin<br>
-  MONGO_PORT: 27017<br>
-  TOMCAT_PORT: 8084<br><br>
+  MONGO_PORT: "27017"<br>
+  TOMCAT_PORT: "8084"<br><br>
+
+<strong>Creación de los apply depods, services, ingress y configmap</strong>
+kubectl apply -f libros-deployment.yaml<br>
+kubectl apply -f libros-service.yaml<br>
+kubectl apply -f libros-ingress.yaml<br>
+kubectl apply -f libros-configmap.yaml<br>
+
 
 
 
