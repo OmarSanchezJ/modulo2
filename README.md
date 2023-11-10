@@ -76,17 +76,16 @@ curl -X 'POST' \
 
 # Pasos para crear el Docker de la API
 Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo las siguientes instrucciones (se utilizó UBUNTU para este ejemplo):
-<ul>
-     <li><strong>Desde el shell instalar la siguiente version de JAVA</strong><br>
+
+     <strong>Desde el shell instalar la siguiente version de JAVA</strong><br>
           apt install openjdk-17-jdk openjdk-17-jre</li>
-     <li><strong></strong>Copiar de forma manual MAVEN 3.9.5</strong><br>
+     <strong></strong>Copiar de forma manual MAVEN 3.9.5</strong><br>
        Bajar la version desde  https://maven.apache.org/download.cgi<br>
        Descomprimir y mover el contenido <br>
           tar -xzf apache-maven-3.9.5-bin.tar.gz<br>
           sudo mv apache-maven-3.9.5 /opt/maven<br><br>
-     </li>
-     <li><strong>Configurar las variables de entorno para MAVEN</strong><br>
-    
+     
+     <strong>Configurar las variables de entorno para MAVEN</strong><br><br>
      ```     
      export JAVA_HOME=/usr/lib/jvm/default-java<br>
      export M3_HOME=/opt/maven<br>
@@ -94,9 +93,7 @@ Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo l
      export PATH=${M3_HOME}/bin:${PATH}<br><br>
      ```
      
-     </li>
-     <li> <strong>Crear las variables de entorno  para conectarnos a MONGO ATLAS y compilar</strong><br>
-
+     <strong>Crear las variables de entorno  para conectarnos a MONGO ATLAS y compilar</strong><br><br>
      ```
      export MONGO_URI="mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb"<br>
      export MONGO_AUTH=admin<br>
@@ -104,25 +101,25 @@ Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo l
      export TOMCAT_PORT=8084<br><br>
      ```
      
-     </li>
-     <li><strong>Una vez compilada nuestra app, se crea el siguiente Dockerfile</strong><br><br>
-FROM ubuntu<br>
-##instalar nginx <br>
-RUN apt-get update<br>
-RUN apt-get install -y nginx<br>
-EXPOSE 80<br><br>
+   <strong>Una vez compilada nuestra app, se crea el siguiente Dockerfile</strong><br><br>
+```
+FROM ubuntu
+##instalar nginx 
+RUN apt-get update
+RUN apt-get install -y nginx
+EXPOSE 80
 
-FROM openjdk:17.0.2-jdk<br>
-##Copiar el paquete jar file dentro de nuestra imagen<br>
-COPY target/app.jar /api.jar<br><br>
+FROM openjdk:17.0.2-jdk
+##Copiar el paquete jar file dentro de nuestra imagen
+COPY target/app.jar /api.jar
 
-##Ejecutar el comando del compilado para su deploy<br>
-CMD ["java", "-jar", "/api.jar"]<br><br>
-     </li>
-     <li><strong>Construir la imagen</strong><br>
-     docker build -t cloud-libros-service:spring-docker .<br>
-     </li>
-     </ul>
+##Ejecutar el comando del compilado para su deploy
+CMD ["java", "-jar", "/api.jar"]
+```
+
+     <strong>Construir la imagen</strong>
+     docker build -t cloud-libros-service:spring-docker .<br><br>
+     
      
 # Correr nuestra API en  DOCKER con las variables de entorno
 
