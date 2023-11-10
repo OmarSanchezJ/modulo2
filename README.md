@@ -256,8 +256,7 @@ kubectl apply -f libros-service.yaml<br>
 kubectl apply -f libros-ingress.yaml<br>
 kubectl apply -f libros-configmap.yaml<br>
 
-<strong> Correr la </strong>
-Ejecutamos nuestro pod de forma interactiva<br>
+<strong> Ejecutamos nuestro pod de forma interactiva </strong><br>
  kubectl exec -it libros-deployment-75f7b65c8b-7wh48 -- /bin/bash<br><br>
 Nos metemos al bash y ejecutamos la misma estructura del CURL anterior (con diferentes datos):
 
