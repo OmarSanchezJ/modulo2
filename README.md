@@ -246,7 +246,7 @@ metadata:
   name: libros-configmap
 data:
   MONGO_URI: "mongodb+srv://libreria:libreria@cluster0.luvjnen.mongodb.net/librosdb"
-  MONGO_AUTH: admin<br>
+  MONGO_AUTH: admin
   MONGO_PORT: "27017"
   TOMCAT_PORT: "8084"
 ```
