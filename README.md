@@ -77,21 +77,20 @@ curl -X 'POST' \
 # Pasos para crear el Docker de la API
 Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo las siguientes instrucciones (se utilizó UBUNTU para este ejemplo):
      <strong>Desde el shell instalar la siguiente version de JAVA</strong><br>
-          apt install openjdk-17-jdk openjdk-17-jre</li>
+         + apt install openjdk-17-jdk openjdk-17-jre</li>
      <strong></strong>Copiar de forma manual MAVEN 3.9.5</strong><br>
-       Bajar la version desde  https://maven.apache.org/download.cgi<br>
+       + Bajar la version desde  https://maven.apache.org/download.cgi<br>
        Descomprimir y mover el contenido <br>
-          tar -xzf apache-maven-3.9.5-bin.tar.gz<br>
-          sudo mv apache-maven-3.9.5 /opt/maven<br><br>
+        +  tar -xzf apache-maven-3.9.5-bin.tar.gz<br>
+         + sudo mv apache-maven-3.9.5 /opt/maven<br><br>
      <strong>Configurar las variables de entorno para MAVEN</strong>
      
-     ```     
      export JAVA_HOME=/usr/lib/jvm/default-java
      export M3_HOME=/opt/maven
      export MAVEN_HOME=/opt/maven
      export PATH=${M3_HOME}/bin:${PATH}
-     ```
      
+     <br><br>
      <strong>Crear las variables de entorno  para conectarnos a MONGO ATLAS y compilar</strong>
      
      ```
