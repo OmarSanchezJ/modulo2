@@ -77,8 +77,8 @@ curl -X 'POST' \
 # Pasos para crear el Docker de la API
 Se deberá compilar el codigo del proyecto en la misma maquina local siguiendo las siguientes instrucciones (se utilizó UBUNTU para este ejemplo):<br>
      <strong>Desde el shell instalar la siguiente version de JAVA</strong><br>
-     + apt install openjdk-17-jdk openjdk-17-jre</li>
-     <strong></strong>Copiar de forma manual MAVEN 3.9.5</strong><br>
+     + apt install openjdk-17-jdk openjdk-17-jre<br>
+     <strong>Copiar de forma manual MAVEN 3.9.5</strong><br>
      + Bajar la version desde  https://maven.apache.org/download.cgi<br>
        <strong>Descomprimir y mover el contenido</strong> <br>
      +  tar -xzf apache-maven-3.9.5-bin.tar.gz<br>
