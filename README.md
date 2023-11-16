@@ -126,9 +126,9 @@ docker build -t cloud-libros-service:spring-docker .<br><br>
 * Poner en DOCKER HUB nuestro contenedor<br><br>
      <strong>Logearnos y crear un TAG de nuestro imagen</strong>
      <br>docker login<br>
-     docker tag cloud-libros-service:spring-docker arkhamax/cloud-usuario-service:v1.0<br><br>
+     docker tag cloud-libros-service:spring-docker arkhamax/cloud-libros-service:v1.0<br><br>
      <strong>Subir nuestra imagen a Docker HUB</strong><br>
-     docker push arkhamax/cloud-librios-service:v1.0<br><br>
+     docker push arkhamax/cloud-libros-service:v1.0<br><br>
           la imagen de este proyecto se encuentra en el siguiente repositorio:<br>
           https://hub.docker.com/repository/docker/arkhamax/cloud-libros-service/general<br>
      
