@@ -165,7 +165,7 @@ spec:
           image: arkhamax/cloud-libros-service:v1.0
           ports:
             - containerPort: 80
-          env:<br>
+          env:
             - name: MONGO_URI
               valueFrom:
                 configMapKeyRef:
