@@ -276,6 +276,14 @@ curl -X 'POST' \
     "isbn":"911-01568409"
 }'    
 ```
+# Automatizar los updates de nuestra API usando TEKTON
+ 
+ Deberemos de poner nuestros archivos de configuracion (puertos, usuarios,etc.) en formato secret de tekton
+ * Los archivos de configuracion de este paso estan en la carpeta <strong>tekton</strong>
+ 
+ kubectl create -f https://raw.githubusercontent.com/OmarSanchezJ/modulo2/main/manifest/tekton/libreria-secret.yaml
+
+
 # Documentacion de referencia
 <a href="https://maven.apache.org/guides/index.html">Official Apache Maven documentation</a>
 
