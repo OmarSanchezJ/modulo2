@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: libros-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: libros-rest
+  template:
+    metadata:
+      labels:
+        app: libros-rest
+    spec:
+      containers:
+        - name: libros-dockercontainer
+          image: arkhamax/cloud-libros-service:v1.2
+          ports:
+            - containerPort: 80
+          env:
+            - name: MONGO_URI
+              valueFrom:
+                configMapKeyRef:
+                  name: libros-configmap
+                  key: mongo_uri
+            - name: MONGO_AUTH
+              valueFrom:
+                configMapKeyRef:
+                  name: libros-configmap
+                  key: mongo_auth
+            - name: MONGO_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: libros-configmap
+                  key: mongo_port
+            - name: TOMCAT_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: libros-configmap
+                  key: tomcat_port
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: libros-service
+spec:
+  selector:
+    app: libros-rest
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80
+    - name: portapp
+      protocol: TCP
+      port: 8084
+      targetPort: 8084
+    - name: mongoatlas
+      protocol: TCP
+      port: 27017
+      targetPort: 27017
